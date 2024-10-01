@@ -22,3 +22,17 @@ a {
 #website-name {
     font-size: 4em;
 }
+
+
+.footer {
+    display: flex;
+    justify-content: center; /* Center the footer links */
+    margin-top: 20px; /* Space above the footer */
+    padding: 20px 0; /* Space inside the footer */
+    
+}
+
+.footer-links a {
+    margin: 0 20px; /* Space between links */
+    font-size: 1.2em; /* Size of the footer links */
+}
