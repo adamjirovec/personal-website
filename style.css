@@ -11,25 +11,24 @@ body {
 
 a {
     color:black;
-    font-size:1.5em;
+    font-size:1.6em;
     text-decoration: none;
 }
 
 .main {
-    margin-top: 20%; /* Offset the content 20% down from the top */
+    margin-top: 16%; /* Offset the content 20% down from the top */
 }
 
 #website-name {
-    font-size: 4em;
+    font-size: 6em;
+    margin-bottom: 0.2em;
 }
 
 
 .footer {
     display: flex;
     justify-content: center; /* Center the footer links */
-    margin-top: 20px; /* Space above the footer */
-    padding: 20px 0; /* Space inside the footer */
-    
+    margin-top: 80px; /* Space above the footer */
 }
 
 .footer-links a {
