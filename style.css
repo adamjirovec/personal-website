@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'JirovecType';
+    src: url('fonts/JIROVECTYPE.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'JirovecType', sans-serif;
+}
+
+a {
+    color:black;
+    font-size:1.5em;
+    text-decoration: none;
+}
+
+.main {
+    margin-top: 20%; /* Offset the content 20% down from the top */
+}
+
+#website-name {
+    font-size: 4em;
+}
