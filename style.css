@@ -1,49 +1,97 @@
 @font-face {
-    font-family: 'JirovecType';
-    src: url('fonts/JIROVECTYPE.otf') format('opentype');
+    font-family: 'Ajirotype';
+    src: url('fonts/Ajirotype.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
+/* Global styles */
 body {
-    font-family: 'JirovecType', sans-serif;
+    font-family: 'Ajirotype', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #111;
+    background-color: #fff;
+    text-align: center;
 }
 
-a {
-    color:black;
-    font-size:1.6em;
-    text-decoration: none;
-}
-
-.main {
-    margin-top: 16%; /* Offset the content 20% down from the top */
-}
-
+/* Headings / Titles */
 #website-name {
-    font-size: 8em;
+    font-size: clamp(3rem, 8vw, 6rem);
     margin-bottom: 0.2em;
+    letter-spacing: -0.02em;
 }
 
+/* Navigation Links */
+a {
+    color: black;
+    font-size: 1.6em;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
 
+a:hover {
+    color: #555;
+    transform: scale(1.03);
+}
+
+/* Main section layout */
+.main {
+    margin-top: 16vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4em;
+}
+
+/* Footer styling */
 .footer {
     display: flex;
-    justify-content: center; /* Center the footer links */
-    margin-top: 80px; /* Space above the footer */
+    justify-content: center;
+    margin-top: 6rem;
+    padding-bottom: 2rem;
 }
 
 .footer-links a {
-    margin: 0 20px; /* Space between links */
-    font-size: 1.2em; /* Size of the footer links */
+    margin: 0 1.2rem;
+    font-size: 1.1em;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
 }
 
-/* Ensure images are displayed centered and stacked */
+.footer-links a:hover {
+    opacity: 1;
+}
+
+/* Image layout */
 .image-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem 1rem;
 }
 
 .portfolio-image {
-    max-width: 100%; /* ensures responsiveness */
-    margin-bottom: 20px; /* space between images */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    a {
+        font-size: 1.2em;
+    }
+
+    .footer-links a {
+        font-size: 1em;
+        margin: 0 10px;
+    }
 }
