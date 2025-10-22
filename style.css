@@ -1,97 +1,98 @@
+/* ===== Base / Typography ===== */
 @font-face {
-    font-family: 'Ajirotype';
-    src: url('fonts/Ajirotype.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Ajirotype';
+  src: url('fonts/Ajirotype.otf') format('opentype');
 }
 
-/* Global styles */
+* { box-sizing: border-box; }
+html { scrollbar-gutter: stable both-edges; }
+
 body {
-    font-family: 'Ajirotype', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #111;
-    background-color: #fff;
-    text-align: center;
+  margin: 0;
+  font-family: 'Ajirotype', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  text-align: center;
+  line-height: 1.25;
 }
 
-/* Headings / Titles */
 #website-name {
-    font-size: clamp(3rem, 8vw, 6rem);
-    margin-bottom: 0.2em;
-    letter-spacing: -0.02em;
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin: 0 0 0.35em;
+  letter-spacing: -0.02em;
 }
 
-/* Navigation Links */
-a {
-    color: black;
-    font-size: 1.6em;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-a:hover {
-    color: #555;
-    transform: scale(1.03);
-}
-
-/* Main section layout */
+/* ===== Layout: vertical stack, even rhythm ===== */
 .main {
-    margin-top: 16vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4em;
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;      /* keep projects one under another */
+  align-items: center;
+  gap: 2.5rem;                 /* equal space between projects */
+  margin-bottom: 2rem;         /* trims space after last image */
 }
 
-/* Footer styling */
-.footer {
-    display: flex;
-    justify-content: center;
-    margin-top: 6rem;
-    padding-bottom: 2rem;
+/* ===== Project blocks ===== */
+.project { margin: 0; }
+.project-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.6em;
+  letter-spacing: -0.01em;
 }
 
-.footer-links a {
-    margin: 0 1.2rem;
-    font-size: 1.1em;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+.project-img {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
-.footer-links a:hover {
-    opacity: 1;
+/* ===== Links ===== */
+a {
+  color: #000;
+  font-size: 1.25em;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+a:hover { color: #555; transform: translateY(-1px); }
+
+/* ===== Footer links row ===== */
+.footer-links {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;             /* prevent crowding on small screens */
+}
+.footer-links a { opacity: 0.85; }
+.footer-links a:hover { opacity: 1; }
+
+/* ===== Bottom logo with consistent spacing ===== */
+.svg-footer {
+  margin-top: 40px;
+  margin-bottom: 60px;         /* visible on laptop & phone */
+}
+.ajiro-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Image layout */
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
+/* ===== Mobile safe-area compensation (iOS, etc.) ===== */
+@supports (-webkit-touch-callout: none) {
+  body { padding-bottom: env(safe-area-inset-bottom, 20px); }
 }
 
-.portfolio-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.portfolio-image:hover {
-    transform: scale(1.02);
-    opacity: 0.95;
-}
-
-/* Responsive tweaks */
+/* ===== Responsive tweaks ===== */
 @media (max-width: 600px) {
-    a {
-        font-size: 1.2em;
-    }
-
-    .footer-links a {
-        font-size: 1em;
-        margin: 0 10px;
-    }
+  a { font-size: 1.1em; }
+  .project-img { width: 130px; }
 }
