@@ -9,9 +9,21 @@
 <center>
     <div class="main">
         <p id="website-name">Adam Jirovec</p> 
-        <p><a href="portfolio.html" target="_blank">Paneled Electric Motorcycle</a></p>
-        <p><a href="portfolio.html" target="_blank">Gridded Ion Thruster</a></p>
-        <p><a href="portfolio.html" target="_blank">Skyleader Internship</a></p>
+
+        <div class="project">
+            <p><a href="portfolio.html" target="_blank">Paneled Electric Motorcycle</a></p>
+            <img src="Paneled_Electric_Motorcycle.png" alt="Paneled Electric Motorcycle" class="project-img">
+        </div>
+
+        <div class="project">
+            <p><a href="portfolio.html" target="_blank">Gridded Ion Thruster</a></p>
+            <img src="Gridded_Ion_Thruster.png" alt="Gridded Ion Thruster" class="project-img">
+        </div>
+
+        <div class="project">
+            <p><a href="portfolio.html" target="_blank">Skyleader Internship</a></p>
+            <img src="Skyleader_Internship.png" alt="Skyleader Internship" class="project-img">
+        </div>
     </div>
 
     <footer class="footer"></footer>
@@ -27,4 +39,23 @@
         <img src="ajiro.svg" alt="Ajiro logo" style="margin-top: 40px; width: 120px;">
     </div>
 </center>
+
+<style>
+.project {
+    margin-bottom: 40px;
+}
+
+.project-img {
+    width: 160px;
+    height: auto;
+    margin-top: 8px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.project-img:hover {
+    transform: scale(1.05);
+}
+</style>
 </body>
