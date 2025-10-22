@@ -1,56 +1,31 @@
 @font-face {
     font-family: 'Ajirotype';
     src: url('fonts/Ajirotype.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* General layout */
+/* Global styles */
 body {
     font-family: 'Ajirotype', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
     color: #111;
+    background-color: #fff;
     text-align: center;
 }
 
-/* Website name */
+/* Headings / Titles */
 #website-name {
     font-size: clamp(3rem, 8vw, 6rem);
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
     letter-spacing: -0.02em;
 }
 
-/* Projects */
-.main {
-    margin-top: 16vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem; /* controls space between projects */
-    margin-bottom: 2rem; /* less space after last image */
-}
-
-.project-title {
-    font-size: 1.6em;
-    margin-bottom: 0.5rem;
-}
-
-.project-img {
-    width: 160px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.project-img:hover {
-    transform: scale(1.07);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-}
-
-/* Links */
+/* Navigation Links */
 a {
     color: black;
-    font-size: 1.4em;
+    font-size: 1.6em;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
 }
@@ -60,9 +35,21 @@ a:hover {
     transform: scale(1.03);
 }
 
-/* Footer links */
-.footer-links {
-    margin-top: 3rem;
+/* Main section layout */
+.main {
+    margin-top: 16vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4em;
+}
+
+/* Footer styling */
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    padding-bottom: 2rem;
 }
 
 .footer-links a {
@@ -76,25 +63,35 @@ a:hover {
     opacity: 1;
 }
 
-/* SVG logo */
-.ajiro-logo {
-    width: 120px;
-    margin-top: 40px; /* space above logo */
-    margin-bottom: 60px; /* added breathing space below logo */
+/* Image layout */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
 }
 
-/* Responsive */
+.portfolio-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+/* Responsive tweaks */
 @media (max-width: 600px) {
     a {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 
     .footer-links a {
         font-size: 1em;
         margin: 0 10px;
-    }
-
-    .project-img {
-        width: 130px;
     }
 }
