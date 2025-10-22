@@ -1,10 +1,4 @@
-/* --- Global resets & rhythm --- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html { scrollbar-gutter: stable both-edges; }
-
+/* Basic setup */
 body {
   margin: 0;
   padding: 0;
@@ -12,90 +6,92 @@ body {
   color: #111;
   background: #fff;
   text-align: center;
-  line-height: 1.25; /* tighter but clean */
+  line-height: 1.25;
 }
 
-/* Tight, consistent paragraph spacing */
-p { margin: 0; }
-
-/* --- Header --- */
+/* Header name */
 #website-name {
   font-size: clamp(3rem, 8vw, 6rem);
-  margin-bottom: 0.35em;   /* precise visual rhythm under title */
+  margin-bottom: 0.4em;
   letter-spacing: -0.02em;
 }
 
-/* --- Main column --- */
+/* Main container */
 .main {
   margin-top: 16vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* ensures vertical stacking */
   align-items: center;
-  gap: 2.25rem;           /* consistent spacing between projects */
-  margin-bottom: 1.75rem; /* trims space after last image */
-  max-width: 860px;       /* prevents over-wide feel on desktop */
+  gap: 2.5rem;             /* even spacing between projects */
+  margin-bottom: 2rem;     /* trims space under last image */
 }
 
-/* --- Projects --- */
+/* Project sections */
 .project {
   display: flex;
   flex-direction: column;
-  align-items: center;     /* hard-align everything to center */
-  gap: 0.5rem;             /* caption-to-image spacing */
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
 }
 
 .project-title {
   font-size: 1.6em;
+  margin: 0;
   letter-spacing: -0.01em;
 }
 
 .project-img {
   width: 160px;
   height: auto;
-  display: block;          /* removes inline-img baseline wiggle */
-  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: block;          /* keeps vertical flow consistent */
+  margin: 0 auto;
 }
+
 .project-img:hover {
   transform: scale(1.07);
   box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
-/* --- Links --- */
+/* Links styling */
 a {
   color: #000;
   font-size: 1.25em;
   text-decoration: none;
-  transition: color 0.25s ease, transform 0.2s ease, opacity 0.2s ease;
-}
-a:hover {
-  color: #555;
-  transform: translateY(-1px); /* subtle, premium feel */
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* --- Footer links (perfect centering & spacing) --- */
-.footer-links {
-  margin-top: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;            /* exact spacing between links */
-  flex-wrap: wrap;        /* avoids crowding on phones */
+a:hover {
+  color: #555;
+  transform: translateY(-1px);
 }
+
+/* Footer links */
+.footer-links {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
 .footer-links a {
-  opacity: 0.88;
+  opacity: 0.85;
 }
 .footer-links a:hover {
   opacity: 1;
 }
 
-/* --- Ajiro logo block (uniform across devices) --- */
+/* Ajiro logo area */
 .svg-footer {
   margin-top: 40px;
-  margin-bottom: 60px;     /* visible on laptop & phone */
+  margin-bottom: 60px; /* visible on all devices */
 }
+
 .ajiro-logo {
   width: 120px;
   height: auto;
@@ -103,16 +99,16 @@ a:hover {
   margin: 0 auto;
 }
 
-/* --- Safe area compensation for mobile --- */
+/* Fix for iPhone safe area padding */
 @supports (-webkit-touch-callout: none) {
   body {
     padding-bottom: env(safe-area-inset-bottom, 20px);
   }
 }
 
-/* --- Responsive refinements --- */
+/* Responsive tuning */
 @media (max-width: 600px) {
   a { font-size: 1.1em; }
-  .project-img { width: 132px; }
+  .project-img { width: 130px; }
   .footer-links { gap: 1rem; }
 }
