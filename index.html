@@ -1,49 +1,73 @@
-<!doctype html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Jirovec</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Jirovec</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <center>
+<center>
     <div class="main">
-      <p id="website-name">Adam Jirovec</p>
+        <p id="website-name">Adam Jirovec</p> 
 
-      <div class="project">
-        <p class="project-title">Paneled Electric Motorcycle</p>
-        <a href="portfolio.html" target="_blank">
-          <img src="Paneled_Electric_Motorcycle.png" alt="Paneled Electric Motorcycle" class="project-img">
-        </a>
-      </div>
+        <div class="project">
+            <p class="project-title">Paneled Electric Motorcycle</p>
+            <a href="portfolio.html" target="_blank">
+                <img src="Paneled_Electric_Motorcycle.png" alt="Paneled Electric Motorcycle" class="project-img">
+            </a>
+        </div>
 
-      <div class="project">
-        <p class="project-title">Gridded Ion Thruster</p>
-        <a href="portfolio.html" target="_blank">
-          <img src="Gridded_Ion_Thruster.png" alt="Gridded Ion Thruster" class="project-img">
-        </a>
-      </div>
+        <div class="project">
+            <p class="project-title">Gridded Ion Thruster</p>
+            <a href="portfolio.html" target="_blank">
+                <img src="Gridded_Ion_Thruster.png" alt="Gridded Ion Thruster" class="project-img">
+            </a>
+        </div>
 
-      <div class="project">
-        <p class="project-title">Skyleader Internship</p>
-        <a href="Skyleader_Internship.html" target="_blank">
-          <img src="Skyleader_Internship.png" alt="Skyleader Internship" class="project-img">
-        </a>
-      </div>
+        <div class="project">
+            <p class="project-title">Skyleader Internship</p>
+            <a href="Skyleader_Internship.html" target="_blank">
+                <img src="Skyleader_Internship.png" alt="Skyleader Internship" class="project-img">
+            </a>
+        </div>
     </div>
 
+    <footer class="footer"></footer>
     <div class="footer-links">
-      <a href="https://www.youtube.com/@adam.jirovec" target="_blank">YouTube</a>
-      <a href="https://www.linkedin.com/in/adam-jirovec" target="_blank">LinkedIn</a>
-      <a href="https://soundcloud.com/adam-jirovec-794172119" target="_blank">SC</a>
-      <a href="mailto:adam.jirovec@icloud.com">Email</a>
+        <a href="https://www.youtube.com/@adam.jirovec" target="_blank">YouTube</a>
+        <a href="https://www.linkedin.com/in/adam-jirovec" target="_blank">LinkedIn</a>
+        <a href="https://soundcloud.com/adam-jirovec-794172119" target="_blank">SC</a>
+        <a href="mailto:adam.jirovec@icloud.com">Email</a>
     </div>
 
+    <!-- SVG logo at the bottom -->
     <div class="svg-footer">
-      <img src="ajiro.svg" alt="Ajiro logo" class="ajiro-logo">
+        <img src="ajiro.svg" alt="Ajiro logo" style="margin-top: 40px; width: 120px;">
     </div>
-  </center>
+</center>
+
+<style>
+.project {
+    margin-bottom: 40px;
+}
+
+.project-title {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.project-img {
+    width: 160px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+}
+</style>
 </body>
-</html>
