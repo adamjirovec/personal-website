@@ -1,100 +1,118 @@
-@font-face {
-    font-family: 'Ajirotype';
-    src: url('fonts/Ajirotype.otf') format('opentype');
-}
+/* --- Global resets & rhythm --- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-/* General layout */
+html { scrollbar-gutter: stable both-edges; }
+
 body {
-    font-family: 'Ajirotype', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    color: #111;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #111;
+  background: #fff;
+  text-align: center;
+  line-height: 1.25; /* tighter but clean */
 }
 
-/* Website name */
+/* Tight, consistent paragraph spacing */
+p { margin: 0; }
+
+/* --- Header --- */
 #website-name {
-    font-size: clamp(3rem, 8vw, 6rem);
-    margin-bottom: 0.3em;
-    letter-spacing: -0.02em;
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 0.35em;   /* precise visual rhythm under title */
+  letter-spacing: -0.02em;
 }
 
-/* Projects */
+/* --- Main column --- */
 .main {
-    margin-top: 16vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem; /* controls space between projects */
-    margin-bottom: 2rem; /* less space after last image */
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;           /* consistent spacing between projects */
+  margin-bottom: 1.75rem; /* trims space after last image */
+  max-width: 860px;       /* prevents over-wide feel on desktop */
+}
+
+/* --- Projects --- */
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* hard-align everything to center */
+  gap: 0.5rem;             /* caption-to-image spacing */
 }
 
 .project-title {
-    font-size: 1.6em;
-    margin-bottom: 0.5rem;
+  font-size: 1.6em;
+  letter-spacing: -0.01em;
 }
 
 .project-img {
-    width: 160px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 160px;
+  height: auto;
+  display: block;          /* removes inline-img baseline wiggle */
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 .project-img:hover {
-    transform: scale(1.07);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
 }
 
-/* Links */
+/* --- Links --- */
 a {
-    color: black;
-    font-size: 1.4em;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
+  color: #000;
+  font-size: 1.25em;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease, opacity 0.2s ease;
 }
-
 a:hover {
-    color: #555;
-    transform: scale(1.03);
+  color: #555;
+  transform: translateY(-1px); /* subtle, premium feel */
 }
 
-/* Footer links */
+/* --- Footer links (perfect centering & spacing) --- */
 .footer-links {
-    margin-top: 3rem;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;            /* exact spacing between links */
+  flex-wrap: wrap;        /* avoids crowding on phones */
 }
-
 .footer-links a {
-    margin: 0 1.2rem;
-    font-size: 1.1em;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+  opacity: 0.88;
 }
-
 .footer-links a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
-/* SVG logo */
+/* --- Ajiro logo block (uniform across devices) --- */
+.svg-footer {
+  margin-top: 40px;
+  margin-bottom: 60px;     /* visible on laptop & phone */
+}
 .ajiro-logo {
-    width: 120px;
-    margin-top: 40px; /* space above logo */
-    margin-bottom: 60px; /* added breathing space below logo */
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Responsive */
+/* --- Safe area compensation for mobile --- */
+@supports (-webkit-touch-callout: none) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+  }
+}
+
+/* --- Responsive refinements --- */
 @media (max-width: 600px) {
-    a {
-        font-size: 1.1em;
-    }
-
-    .footer-links a {
-        font-size: 1em;
-        margin: 0 10px;
-    }
-
-    .project-img {
-        width: 130px;
-    }
+  a { font-size: 1.1em; }
+  .project-img { width: 132px; }
+  .footer-links { gap: 1rem; }
 }
