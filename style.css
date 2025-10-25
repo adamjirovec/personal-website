@@ -85,7 +85,7 @@ a:hover { color: #555; transform: translateY(-1px); }
   margin: 0 auto;
 }
 
-/* ===== Skyleader page: vertical image stack ===== */
+/* ===== Portfolio pages: vertical image stack ===== */
 .image-container {
   display: flex;
   flex-direction: column;      /* stack vertically */
@@ -103,8 +103,9 @@ a:hover { color: #555; transform: translateY(-1px); }
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .portfolio-image:hover {
-  transform: scale(1.07);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* same as normal state */
+  cursor: default;
 }
 
 /* ===== Mobile safe-area compensation (iOS, etc.) ===== */
